@@ -1,0 +1,239 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-critical: var(--critical);
+  --color-critical-foreground: var(--critical-foreground);
+  --color-info: var(--info);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(0.984 0.003 247.86);
+  --foreground: oklch(0.208 0.042 265.75);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.208 0.042 265.75);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.208 0.042 265.75);
+
+  --primary: oklch(0.45 0.18 265);
+  --primary-foreground: oklch(0.99 0.003 247.86);
+
+  --secondary: oklch(0.968 0.007 247.9);
+  --secondary-foreground: oklch(0.208 0.042 265.75);
+
+  --muted: oklch(0.968 0.007 247.9);
+  --muted-foreground: oklch(0.554 0.046 257.42);
+
+  --accent: oklch(0.968 0.007 247.9);
+  --accent-foreground: oklch(0.208 0.042 265.75);
+
+  --destructive: oklch(0.637 0.21 25);
+  --destructive-foreground: oklch(0.984 0.003 247.86);
+
+  --border: oklch(0.929 0.013 255.5);
+  --input: oklch(0.929 0.013 255.5);
+  --ring: oklch(0.45 0.18 265);
+
+  --success: oklch(0.696 0.17 162.48);
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.769 0.166 70.08);
+  --warning-foreground: oklch(0.2 0.05 60);
+  --danger: oklch(0.704 0.187 41);
+  --danger-foreground: oklch(1 0 0);
+  --critical: oklch(0.645 0.221 16.4);
+  --critical-foreground: oklch(1 0 0);
+  --info: oklch(0.62 0.17 254);
+
+  --grad-primary: linear-gradient(135deg, oklch(0.5 0.2 265), oklch(0.65 0.2 220));
+  --grad-success: linear-gradient(135deg, oklch(0.7 0.18 160), oklch(0.75 0.16 195));
+  --grad-warning: linear-gradient(135deg, oklch(0.78 0.18 60), oklch(0.72 0.2 35));
+  --grad-danger: linear-gradient(135deg, oklch(0.7 0.2 35), oklch(0.65 0.22 15));
+  --grad-hero: radial-gradient(circle at 20% 20%, oklch(0.85 0.12 265 / 0.4), transparent 50%),
+               radial-gradient(circle at 80% 70%, oklch(0.82 0.16 195 / 0.35), transparent 55%);
+
+  --shadow-soft: 0 1px 2px oklch(0.2 0.04 265 / 0.04), 0 8px 24px -12px oklch(0.2 0.04 265 / 0.12);
+  --shadow-lift: 0 10px 40px -15px oklch(0.2 0.04 265 / 0.25);
+  --shadow-glow: 0 0 0 1px oklch(0.5 0.2 265 / 0.15), 0 12px 40px -12px oklch(0.5 0.2 265 / 0.35);
+}
+
+.dark {
+  --background: oklch(0.16 0.025 265);
+  --foreground: oklch(0.97 0.005 247);
+  --card: oklch(0.21 0.03 265);
+  --card-foreground: oklch(0.97 0.005 247);
+  --popover: oklch(0.21 0.03 265);
+  --popover-foreground: oklch(0.97 0.005 247);
+  --primary: oklch(0.7 0.17 250);
+  --primary-foreground: oklch(0.13 0.04 264);
+  --secondary: oklch(0.27 0.035 260);
+  --secondary-foreground: oklch(0.97 0.005 247);
+  --muted: oklch(0.25 0.03 260);
+  --muted-foreground: oklch(0.72 0.03 256);
+  --accent: oklch(0.27 0.035 260);
+  --accent-foreground: oklch(0.97 0.005 247);
+  --destructive: oklch(0.7 0.19 22);
+  --destructive-foreground: oklch(0.97 0.005 247);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.7 0.17 250);
+  --success: oklch(0.72 0.17 162);
+  --warning: oklch(0.78 0.17 70);
+  --danger: oklch(0.74 0.19 41);
+  --critical: oklch(0.7 0.22 16);
+  --info: oklch(0.7 0.17 250);
+
+  --grad-hero: radial-gradient(circle at 20% 20%, oklch(0.45 0.2 265 / 0.45), transparent 50%),
+               radial-gradient(circle at 80% 70%, oklch(0.45 0.2 195 / 0.35), transparent 55%);
+
+  /* Brighter gradient in dark mode so .grad-text reads cleanly on dark surfaces */
+  --grad-primary: linear-gradient(135deg, oklch(0.78 0.17 250), oklch(0.82 0.15 215));
+
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px -12px oklch(0 0 0 / 0.5);
+  --shadow-lift: 0 10px 40px -15px oklch(0 0 0 / 0.6);
+  --shadow-glow: 0 0 0 1px oklch(0.7 0.17 250 / 0.25), 0 12px 40px -12px oklch(0.7 0.17 250 / 0.45);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  html[dir="rtl"] body {
+    font-family: "IBM Plex Sans Arabic", "Inter", system-ui, sans-serif;
+  }
+
+  /* Unified focus ring across every interactive element */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 30%, transparent);
+    color: var(--foreground);
+  }
+
+  /* Slim, themed scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklab, var(--muted-foreground) 35%, transparent) transparent;
+  }
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-thumb {
+    background-color: color-mix(in oklab, var(--muted-foreground) 35%, transparent);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in oklab, var(--muted-foreground) 55%, transparent);
+    background-clip: padding-box;
+  }
+  *::-webkit-scrollbar-track { background: transparent; }
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility glass {
+  background-color: color-mix(in oklab, var(--card) 70%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility grad-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.1); }
+  66% { transform: translate(-20px, 30px) scale(0.95); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 oklch(0.7 0.17 250 / 0.4); }
+  100% { box-shadow: 0 0 0 12px oklch(0.7 0.17 250 / 0); }
+}
+.animate-blob { animation: blob 14s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
